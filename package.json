@@ -1,0 +1,22 @@
+{
+  "name": "generate_read_me",
+  "version": "1.0.0",
+  "description": "A node.js app to generate a reame.md file based on answers to questions presented to the user by the app.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pmarceaujr/GenerateReadMeFile.git"
+  },
+  "author": "Paul Marceau",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/pmarceaujr/GenerateReadMeFile/issues"
+  },
+  "homepage": "https://github.com/pmarceaujr/GenerateReadMeFile#readme",
+  "dependencies": {
+    "inquirer": "^8.0.0"
+  }
+}
