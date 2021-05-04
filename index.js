@@ -8,6 +8,21 @@ let html = '';
 const questions = [
     {
         type: 'input',
+        message: 'What is your GITHUB username?',
+        name: 'username',
+    },
+    {
+        type: 'input',
+        message: 'What is the name of your GITHUB repository?',
+        name: 'reponame',
+    },
+    {
+        type: 'input',
+        message: 'What is your GITHUB username?',
+        name: 'username',
+    },
+    {
+        type: 'input',
         message: 'What is the title of your project?',
         name: 'projTitle',
     },
@@ -55,6 +70,11 @@ const questions = [
         type: 'input',
         message: 'What should users do if they have questions?',
         name: 'projQues',
+    },
+    {
+        type: 'input',
+        message: 'Enter the link to the deployed project',
+        name: 'projLink',
     },
     {
         type: 'list',
