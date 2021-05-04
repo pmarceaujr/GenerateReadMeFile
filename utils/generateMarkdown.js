@@ -23,8 +23,8 @@ ${data.projDesc}
 
 ## Table of Contents (Optional)
 
-- [User Story](#user_story)
-- [Acceptance Criteria](#acceptance_criteria)
+- [User Story](#user-story)
+- [Acceptance Criteria](#acceptance-criteria)
 - [Installation](#installation)
 - [Usage](#usage)
 - [Requires](#requires)
