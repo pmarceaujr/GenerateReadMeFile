@@ -8,91 +8,114 @@ let html = '';
 const questions = [
     {
         type: 'input',
-        message: 'What is your GITHUB username?',
+        message: 'Please enter your Github username (Required):',
         name: 'username',
+        validate: (input) => {
+            if (input === '') {
+                return "Github username is required.  Please enter your Github username:"
+            }
+            return true;
+        }
     },
     {
         type: 'input',
-        message: 'What is the name of your GITHUB repository?',
+        message: 'Please enter the name of your Github repository (Required):',
         name: 'reponame',
+        validate: (input) => {
+            if (input === '') {
+                return "Github repository name is required.  Please enter your Github repository name:"
+            }
+            return true;
+        }
     },
     {
         type: 'input',
-        message: 'What is your GITHUB username?',
-        name: 'username',
-    },
-    {
-        type: 'input',
-        message: 'What is the title of your project?',
+        message: 'Please enter the title of your project (Required):',
         name: 'projTitle',
+        validate: (input) => {
+            if (input === '') {
+                return "Project title is required.  Please enter your project title:"
+            }
+            return true;
+        }
     },
     {
         type: 'input',
-        message: 'Enter a description of your project.',
+        message: 'Please enter a description of your project (Required):',
         name: 'projDesc',
+        validate: (input) => {
+            if (input === '') {
+                return "Project description is required.  Please enter your project description:"
+            }
+            return true;
+        }
     },
     {
         type: 'input',
-        message: 'Enter your user story.',
+        message: 'Please enter your user story (Optional):',
         name: 'userStory',
     },
     {
         type: 'input',
-        message: 'Enter acceptance criteria',
+        message: 'Please enter acceptance criteria (Optional):',
         name: 'accptCriteria',
     },
     {
         type: 'input',
-        message: 'What are the steps to install your project?',
+        message: 'Please enter the steps to install your project (Optional):?',
         name: 'projInstall',
     },
     {
         type: 'input',
-        message: 'What is the use/purpose of your project?',
+        message: 'Please enter the use/purpose of your project (Optional):',
         name: 'projUsage',
     },
     {
         type: 'input',
-        message: 'What is required for your project?',
+        message: 'Please enter the requirements for your project (Optional):?',
         name: 'projRequires',
     },
     {
         type: 'input',
-        message: 'Who are the other contributors on your project?',
+        message: 'Please enter any other contributors on your project (Optional):?',
         name: 'projContribs',
     },
     {
         type: 'input',
-        message: 'Enter test information for your project',
+        message: 'Please enter test information for your project (Optional):',
         name: 'projTesting',
     },
     {
         type: 'input',
-        message: 'What should users do if they have questions?',
+        message: 'Please enter steps users should take if they have questions (Optional):',
         name: 'projQues',
     },
     {
         type: 'input',
-        message: 'Enter the link to the deployed project',
+        message: 'Please enter the link to the deployed project (Optional):',
         name: 'projLink',
     },
     {
         type: 'list',
-        message: 'What is the license on your project?',
-        choices: ['None',
-            'Apache License 2.0',
-            'GNU General Public License v3.0',
-            'MIT License',
-            'BSD 2-Clause "Simplified" License',
-            'BSD 3-Clause "New" or "Revised" License',
-            'Boost Software License 1.0',
-            'Creative Commons Zero v1.0 Universal',
-            'Eclipse Public License 2.0',
-            'GNU Affero General Public License v3.0',
-            'GNU General Public License v2.0',
-            'GNU Lesser General Public License v2.1',
-            'Mozilla Public License 2.0',
-            'The Unlicense'],
+        message: 'Please select the license that governs your project (Required):',
+        choices: [
+            { value: '', name: 'None' },
+            { value: 'mit', name: 'MIT License' },
+            { value: 'isc', name: 'ISC License' },
+            { value: 'apache-2.0', name: 'Apache License 2.0' },
+            { value: 'gpl-3.0', name: 'GNU General Public License v3.0' },
+            { value: 'bsd-2-clause', name: 'BSD 2-Clause "Simplified" License' },
+            { value: 'bsd-3-clause', name: 'BSD 3-Clause "New" or "Revised" License' },
+            { value: 'bsl-1.0', name: 'Boost Software License 1.0' },
+            { value: 'cc0-1.0', name: 'Creative Commons Zero v1.0 Universal' },
+            { value: 'epl-2.0', name: 'Eclipse Public License 2.0' },
+            { value: 'agpl-3.0', name: 'GNU Affero General Public License v3.0' },
+            { value: 'gpl-2.0', name: 'GNU General Public License v2.0' },
+            { value: 'lgpl-2.1', name: 'GNU Lesser General Public License v2.1' },
+            { value: 'mpl-2.0', name: 'Mozilla Public License 2.0' },
+            { value: 'osl-3.0', name: 'Open Software License 3.0' },
+            { value: 'unlicense', name: 'The Unlicense' },
+            { value: 'wtfpl', name: 'Do What The F*ck You Want To Public License' }],
         name: 'projLicense',
     },
 ];
