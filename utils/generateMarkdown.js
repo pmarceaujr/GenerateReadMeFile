@@ -121,15 +121,15 @@ function renderProjectTesting(testing) {
   }
 }
 // Function to return the Project Question or Support
-function renderProjectQuestions(question) {
+function renderProjectQuestions(question, username, email, reponame) {
   if (question) {
     console.log(question)
-    readMeQuestions = `## Questions And Support \n  ${question} `
-    readMeTableContents = readMeTableContents + '- [Questions And Support](#questions) \n'
+    readMeQuestions = `## Questions And Support \n  ${question} \n If you have any questions about the application or the repository, please open an [issue](https://github.com/${username}/${reponame}/issues) or contact me via email at ${email}. \n You can find more of my work on my [GitHub](https://github.com/${username}).`
   }
   else {
-    readMeQuestions = ''
+    readMeQuestions = `## Questions And Support \n If you have any questions about the application or the repository, please open an [issue](https://github.com/${username}/${reponame}/issues) or contact me via email at ${email}. \n You can find more of my work on my [GitHub](https://github.com/${username}).`
   }
+  readMeTableContents = readMeTableContents + '- [Questions And Support](#questions-and-support) \n'
 }
 // Function to return the Project Contributors
 function renderProjectContribs(contributors) {
@@ -180,7 +180,7 @@ function generateMarkdown(data) {
   renderProjectUsage(data.projUsage)
   renderProjectReqs(data.projRequires)
   renderProjectTesting(data.projTesting)
-  renderProjectQuestions(data.projQues)
+  renderProjectQuestions(data.projQues, data.username, data.email, data.reponame)
   renderProjectContribs(data.projContribs)
   renderProjectWebLinks(data.projLink)
   renderLicenseBadge(data.projLicense)
