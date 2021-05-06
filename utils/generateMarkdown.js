@@ -58,7 +58,7 @@ function renderProjectDesc(description) {
 function renderProjectUser(userStory) {
   if (userStory) {
     console.log(userStory)
-    readMeUserStory = `## User Story \n  ${userStory} `
+    readMeUserStory = `## User Story \n  \`\`\`${userStory}\`\`\` `
     readMeTableContents = readMeTableContents + '- [User Story](#user-story) \n'
   }
   else {
@@ -69,7 +69,7 @@ function renderProjectUser(userStory) {
 function renderProjectCriteria(criteria) {
   if (criteria) {
     console.log(criteria)
-    readMeAccptCriteria = `## Acceptance Criteria \n  ${criteria} `
+    readMeAccptCriteria = `## Acceptance Criteria \n  \`\`\`${criteria} \`\`\``
     readMeTableContents = readMeTableContents + '- [Acceptance Criteria](#acceptance-criteria) \n'
   }
   else {
