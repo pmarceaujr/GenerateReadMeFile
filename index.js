@@ -19,6 +19,17 @@ const questions = [
     },
     {
         type: 'input',
+        message: 'Please enter your email address (Required):',
+        name: 'email',
+        validate: (input) => {
+            if (input === '') {
+                return "Email address is required.  Please enter your email address:"
+            }
+            return true;
+        }
+    },
+    {
+        type: 'input',
         message: 'Please enter the name of your Github repository (Required):',
         name: 'reponame',
         validate: (input) => {
