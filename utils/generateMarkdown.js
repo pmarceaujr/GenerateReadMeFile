@@ -1,3 +1,4 @@
+//Vars used in the Readme Generator
 let readMeProjectTitle = ''
 let readMeProjectDesc = ''
 let readMeTableContents = '## Table of Contents \n '
@@ -14,6 +15,7 @@ let readMeWebLinks = ''
 let licenseBadge = ''
 let licenseLink = ''
 let licenseText = ''
+//Multidimentional array object to store the license data used to build badges, links and  text
 let licenseArray = {
   mit: { badge: 'MIT', name: 'MIT License', link: 'mit' },
   isc: { badge: 'ISC', name: 'ISC License', link: 'isc' },
@@ -38,7 +40,7 @@ let licenseArray = {
 function renderProjectTitle(title) {
   if (title) {
     console.log(title)
-    readMeProjectTitle = `# ${title}`
+    readMeProjectTitle = `# __${title}__`
   }
   else {
     readMeProjectTitle = ''
@@ -48,7 +50,7 @@ function renderProjectTitle(title) {
 function renderProjectDesc(description) {
   if (description) {
     console.log(description)
-    readMeProjectDesc = `## Description \n ${description}`
+    readMeProjectDesc = `## __Description__ \n ${description}`
   }
   else {
     readMeProjectDesc = ''
@@ -58,7 +60,7 @@ function renderProjectDesc(description) {
 function renderProjectUser(userStory) {
   if (userStory) {
     console.log(userStory)
-    readMeUserStory = `## User Story \n  ${userStory} `
+    readMeUserStory = `## __User__ __Story__ \n  ${userStory} `
     readMeTableContents = readMeTableContents + '- [User Story](#user-story) \n'
   }
   else {
@@ -69,7 +71,7 @@ function renderProjectUser(userStory) {
 function renderProjectCriteria(criteria) {
   if (criteria) {
     console.log(criteria)
-    readMeAccptCriteria = `## Acceptance Criteria \n  ${criteria} `
+    readMeAccptCriteria = `## __Acceptance__ __Criteria__ \n  ${criteria} `
     readMeTableContents = readMeTableContents + '- [Acceptance Criteria](#acceptance-criteria) \n'
   }
   else {
@@ -80,7 +82,7 @@ function renderProjectCriteria(criteria) {
 function renderProjectInstall(install) {
   if (install) {
     console.log(install)
-    readMeInstallation = `## Installation \n ${install}`
+    readMeInstallation = `## __Installation__ \n ${install}`
     readMeTableContents = readMeTableContents + '- [Installation](#installation) \n'
   }
   else {
@@ -91,7 +93,7 @@ function renderProjectInstall(install) {
 function renderProjectUsage(usage) {
   if (usage) {
     console.log(usage)
-    readMeUsage = `## Usage \n  ${usage} `
+    readMeUsage = `## __Usage__ \n  ${usage} `
     readMeTableContents = readMeTableContents + '- [Usage](#usage) \n'
   }
   else {
@@ -102,7 +104,7 @@ function renderProjectUsage(usage) {
 function renderProjectReqs(required) {
   if (required) {
     console.log(required)
-    readMeRequires = `## Required \n  ${required} `
+    readMeRequires = `## __Required__ \n  ${required} `
     readMeTableContents = readMeTableContents + '- [Required](#required) \n'
   }
   else {
@@ -113,7 +115,7 @@ function renderProjectReqs(required) {
 function renderProjectTesting(testing) {
   if (testing) {
     console.log(testing)
-    readMeTesting = `## Testing \n  ${testing} `
+    readMeTesting = `## __Testing__ \n  ${testing} `
     readMeTableContents = readMeTableContents + '- [Testing](#testing) \n'
   }
   else {
@@ -124,10 +126,10 @@ function renderProjectTesting(testing) {
 function renderProjectQuestions(question, username, email, reponame) {
   if (question) {
     console.log(question)
-    readMeQuestions = `## Questions And Support \n  ${question} \n If you have any questions about the application or the repository, please open an [issue](https://github.com/${username}/${reponame}/issues) or contact me via email at ${email}. \n You can find more of my work on my [GitHub](https://github.com/${username}).`
+    readMeQuestions = `## __Questions__ __And__ __Support__ \n  ${question} \n If you have any questions about the application or the repository, please open an [issue](https://github.com/${username}/${reponame}/issues) or contact me via email at ${email}. \n You can find more of my work on my [GitHub](https://github.com/${username}).`
   }
   else {
-    readMeQuestions = `## Questions And Support \n If you have any questions about the application or the repository, please open an [issue](https://github.com/${username}/${reponame}/issues) or contact me via email at ${email}. \n You can find more of my work on my [GitHub](https://github.com/${username}).`
+    readMeQuestions = `## __Questions__ __And__ __Support__ \n If you have any questions about the application or the repository, please open an [issue](https://github.com/${username}/${reponame}/issues) or contact me via email at ${email}. \n You can find more of my work on my [GitHub](https://github.com/${username}).`
   }
   readMeTableContents = readMeTableContents + '- [Questions And Support](#questions-and-support) \n'
 }
@@ -135,18 +137,18 @@ function renderProjectQuestions(question, username, email, reponame) {
 function renderProjectContribs(contributors) {
   if (contributors) {
     console.log(contributors)
-    readMeContributors = `## Contributors \n  ${contributors} `
+    readMeContributors = `## __Contributors__ \n  ${contributors} `
     readMeTableContents = readMeTableContents + '- [Contributors](#contributors) \n'
   }
   else {
     readMeContributors = ''
   }
 }
-// Function to return the Project Contributors
+// Function to return the Project Web Links
 function renderProjectWebLinks(weblinks) {
   if (weblinks) {
     console.log(weblinks)
-    readMeWebLinks = `## Deployed Link \n  ${weblinks} `
+    readMeWebLinks = `## __Deployed__ __Link__ \n  ${weblinks} `
     readMeTableContents = readMeTableContents + '- [Deployed Link](#deployed-link) \n'
   }
   else {
@@ -160,7 +162,7 @@ function renderLicenseBadge(license) {
     console.log(licenseArray[license]['badge'])
     licenseBadge = `[![badge](https://img.shields.io/badge/license-${licenseArray[license]['badge']}-green)](https://choosealicense.com/licenses/${licenseArray[license]['link']})`
     licenseLink = `[${licenseArray[license]['name']}](https://choosealicense.com/licenses/${licenseArray[license]['link']})`
-    licenseText = `## License \n This project is licensed under the [${licenseArray[license]['name']}](https://choosealicense.com/licenses/${licenseArray[license]['link']}).`
+    licenseText = `## __License__ \n This project is licensed under the [${licenseArray[license]['name']}](https://choosealicense.com/licenses/${licenseArray[license]['link']}).`
     readMeTableContents = readMeTableContents + '- [License](#license) \n'
   }
   else {
@@ -185,6 +187,7 @@ function generateMarkdown(data) {
   renderProjectWebLinks(data.projLink)
   renderLicenseBadge(data.projLicense)
 
+  //Below is where the contents of the README file are added to the return variable, that will write the README file.
   let fileContents =
     `
 ${readMeProjectTitle}
