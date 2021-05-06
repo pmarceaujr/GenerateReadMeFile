@@ -58,7 +58,7 @@ function renderProjectDesc(description) {
 function renderProjectUser(userStory) {
   if (userStory) {
     console.log(userStory)
-    readMeUserStory = `## User Story \n \`\`\`md ${userStory}\`\`\` `
+    readMeUserStory = `## User Story \n  ${userStory} `
     readMeTableContents = readMeTableContents + '- [User Story](#user-story) \n'
   }
   else {
@@ -69,7 +69,7 @@ function renderProjectUser(userStory) {
 function renderProjectCriteria(criteria) {
   if (criteria) {
     console.log(criteria)
-    readMeAccptCriteria = `## Acceptance Criteria \n \`\`\`md ${criteria}\`\`\` `
+    readMeAccptCriteria = `## Acceptance Criteria \n  ${criteria} `
     readMeTableContents = readMeTableContents + '- [Acceptance Criteria](#acceptance-criteria) \n'
   }
   else {
@@ -102,8 +102,8 @@ function renderProjectUsage(usage) {
 function renderProjectReqs(required) {
   if (required) {
     console.log(required)
-    readMeRequires = `## Usage \n  ${required} `
-    readMeTableContents = readMeTableContents + '- [Requires](#requires) \n'
+    readMeRequires = `## Required \n  ${required} `
+    readMeTableContents = readMeTableContents + '- [Required](#required) \n'
   }
   else {
     readMeRequires = ''
@@ -124,7 +124,7 @@ function renderProjectTesting(testing) {
 function renderProjectQuestions(question) {
   if (question) {
     console.log(question)
-    readMeQuestions = `## Question And Support \n  ${question} `
+    readMeQuestions = `## Questions And Support \n  ${question} `
     readMeTableContents = readMeTableContents + '- [Questions And Support](#questions) \n'
   }
   else {
@@ -185,7 +185,6 @@ function generateMarkdown(data) {
   renderProjectWebLinks(data.projLink)
   renderLicenseBadge(data.projLicense)
 
-
   let fileContents =
     `
 ${readMeProjectTitle}
@@ -195,7 +194,6 @@ ${licenseBadge}
 ${readMeProjectDesc}
 
 ${readMeTableContents}
-
 
 ---
 ${readMeUserStory}
@@ -214,9 +212,11 @@ ${readMeQuestions}
 
 ${readMeContributors}  
 
+${readMeWebLinks}
+
 ${licenseText}   
 
-${readMeWebLinks}
+
 `
   return fileContents;
 }
