@@ -126,7 +126,7 @@ function renderProjectTesting(testing) {
 function renderProjectQuestions(question, username, email, reponame) {
   if (question) {
     console.log(question)
-    readMeQuestions = `## __Questions__ __And__ __Support__ \n  ${question} \n If you have any questions about the application or the repository, please open an [issue](https://github.com/${username}/${reponame}/issues) or contact me via email at ${email}.   \n You can find more of my work on my [GitHub](https://github.com/${username}).`
+    readMeQuestions = `## __Questions__ __And__ __Support__ \n  ${question}   \n   If you have any questions about the application or the repository, please open an [issue](https://github.com/${username}/${reponame}/issues) or contact me via email at ${email}.   \n You can find more of my work on my [GitHub](https://github.com/${username}).`
   }
   else {
     readMeQuestions = `## __Questions__ __And__ __Support__ \n If you have any questions about the application or the repository, please open an [issue](https://github.com/${username}/${reponame}/issues) or contact me via email at ${email}.   \n You can find more of my work on my [GitHub](https://github.com/${username}).`
@@ -144,7 +144,7 @@ function renderProjectContribs(contributors) {
     readMeContributors = ''
   }
 }
-// Function to return the Project Web Links
+// Function to return the Project Web Links  //![alt text](http://url/to/img.png)
 function renderProjectWebLinks(weblinks) {
   if (weblinks) {
     console.log(weblinks)
@@ -153,6 +153,24 @@ function renderProjectWebLinks(weblinks) {
   }
   else {
     readMeWebLinks = ''
+  }
+}
+// Function to return the Project Media links (Screenshots or videos)  //![alt text](http://url/to/img.png)
+function renderProjectWebMedia(media1, media2, media3) {
+  if (media1) {
+    console.log(media1)
+    readMeScreensShots = `## __Media__ __Links__ \n  ![media file 1](./includes/images/${media1}) `
+    readMeTableContents = readMeTableContents + '- [Media Links](#media-links) \n'
+  }
+  if (media2) {
+    console.log(media2)
+    readMeScreensShots = readMeScreensShots + ` \n  ![media file 2](./includes/images/${media2}) `
+    //readMeTableContents = readMeTableContents + '- [Media Links](#media-links) \n'
+  }
+  if (media3) {
+    console.log(media3)
+    readMeScreensShots = readMeScreensShots + ` \n  ![media file 3](./includes/images/${media3}) `
+    //readMeTableContents = readMeTableContents + '- [Media Links](#media-links) \n'
   }
 }
 // Function that returns a license badge, license link and license text based on which license is passed in
@@ -185,41 +203,28 @@ function generateMarkdown(data) {
   renderProjectQuestions(data.projQues, data.username, data.email, data.reponame)
   renderProjectContribs(data.projContribs)
   renderProjectWebLinks(data.projLink)
+  renderProjectWebMedia(data.projScreen1, data.projScreen2, data.projScreen3)
   renderLicenseBadge(data.projLicense)
 
   //Below is where the contents of the README file are added to the return variable, that will write the README file.
   let fileContents =
     `
 ${readMeProjectTitle}
-
 ${licenseBadge}
-
 ${readMeProjectDesc}
-
 ${readMeTableContents}
-
 ---
 ${readMeUserStory}
-
 ${readMeAccptCriteria}  
-
 ${readMeInstallation}  
-
 ${readMeUsage}  
-
+${readMeScreensShots}
 ${readMeRequires}
-
 ${readMeTesting} 
-
 ${readMeQuestions}  
-
 ${readMeContributors}  
-
 ${readMeWebLinks}
-
 ${licenseText}   
-
-
 `
   return fileContents;
 }
