@@ -4,7 +4,7 @@ const inquirer = require('inquirer');
 const generateMarkdown = require('./utils/generateMarkdown.js');
 let html = '';
 
-// TODO: Create an array of questions for user input
+//Create an array of questions for user input
 const questions = [
     {
         type: 'input',
@@ -129,7 +129,44 @@ const questions = [
             { value: 'wtfpl', name: 'Do What The F*ck You Want To Public License' }],
         name: 'projLicense',
     },
+    {
+        type: 'input',
+        message: 'Please enter the file name for screenshot #1 (Required):',
+        name: 'projScreen1',
+        validate: (input) => {
+            if (input === '') {
+                return "At least one screenshot is required.  Please enter the file name for screenshot #1:"
+            }
+            return true;
+        }
+    },
+    {
+        type: 'input',
+        message: 'Please enter the file name for screenshot #2 (Optional):',
+        name: 'projScreen2',
+    },
+    {
+        type: 'input',
+        message: 'Please enter the file name for screenshot #3 (Optional):',
+        name: 'projScreen3',
+    },
 ];
+///////// NEw code for screenshots
+//Create an array of questions for user to add screenshots or other media links
+/*const screenshots = [    
+    {
+        type: 'input',
+        message: 'Please enter the screenshot file name (Required):',
+        name: 'projScreen',
+        validate: (input) => {
+            if (input === '') {
+                return "At least one screenshot is required.  Please enter the screenshot file name:"
+            }
+            return true;
+        }
+    },
+];*/
+
 
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {
