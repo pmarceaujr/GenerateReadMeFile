@@ -1,10 +1,10 @@
 
-# 09 Node.js Homework: Professional README Generator
+# __Project TItle__
 
-[![badge](https://img.shields.io/badge/license-MIT-green)](https://choosealicense.com/licenses/mit)
 
-## Description 
- A node app to generate a README.md file. The content is gathered by asking the user a series of questions related to the project.<br/><br/>When creating an open source project on GitHub, it’s important to have a high-quality README for the app. This should include what the app is for, how to use the app, how to install it, how to report issues, and how to make contributions&mdash;this last part increases the likelihood that other developers will contribute to the success of the project.<br/>You can quickly and easily create a README file by using a command-line application to generate one. This allows the project creator to devote more time to working on the project.
+
+## __Description__ 
+ sdkjfskdjfalsdkjfaskldjfaskdjfaldskfja
 
 ## Table of Contents 
  - [User Story](#user-story) 
@@ -12,44 +12,35 @@
 - [Installation](#installation) 
 - [Usage](#usage) 
 - [Required](#required) 
-- [Testing](#testing) 
 - [Questions And Support](#questions-and-support) 
-- [Contributors](#contributors) 
-- [Deployed Link](#deployed-link) 
-- [License](#license) 
 
 
 ---
 ## User Story 
-  AS A developer<br/>I WANT a README generator<br/>SO THAT I can quickly create a professional README for a new project<br/> 
+  asdf 
 
 ## Acceptance Criteria 
-  GIVEN a command-line application that accepts user input<br/>WHEN I am prompted for information about my application repository<br/>THEN a high-quality, professional README.md is generated with the title of my project and sections entitled Description, Table of Contents, Installation, Usage, License, Contributing, Tests, and Questions<br/>WHEN I enter my project title<br/>THEN this is displayed as the title of the README<br/>WHEN I enter a description, installation instructions, usage information, contribution guidelines, and test instructions<br/>THEN this information is added to the sections of the README entitled Description, Installation, Usage, Contributing, and Tests<br/>WHEN I choose a license for my application from a list of options<br/>THEN a badge for that license is added near the top of the README and a notice is added to the section of the README entitled License that explains which license the application is covered under<br/>WHEN I enter my GitHub username<br/>THEN this is added to the section of the README entitled Questions, with a link to my GitHub profile<br/>WHEN I enter my email address<br/>THEN this is added to the section of the README entitled Questions, with instructions on how to reach me with additional questions<br/>WHEN I click on the links in the Table of Contents<br/>THEN I am taken to the corresponding section of the README<br/>   
+  asdf   
 
 ## Installation 
- O1. Install Node.js<br/>O2. Clone repository to your local machine<br/>O3. Run "npm install" to install all dependencies  
+ dsf  
 
 ## Usage 
-  Create a NODE.js command-line application that will dynamically generate a professional looking README.md based on the user's answers to specific questions. The application will prompt the user with predetermined questions and those answers will be used to build the README.md file.   
+  asd   
 
 ## Required 
-  ```npm inquirer``` 
+  f 
 
-## Testing 
-  Tests were performed to ensure that application met the specified acceptance criteria.  
+ 
 
 ## Questions And Support 
-  This plus the default atext shjould be good 
- If you have any questions about the application or the repository, please open an [issue](https://github.com/pmarceaujr/GenerateReadMeFile/issues) or contact me via email at pmarceau@marceaus.net. 
- You can find more of my work on my [GitHub](https://github.com/pmarceaujr).  
+ If you have any questions about the application or the repository, please open an [issue](https://github.com/rty/rty/issues) or contact me via email at rty. 
+ You can find more of my work on my [GitHub](https://github.com/rty).  
 
-## Contributors 
-  No other contributors at this time   
+  
 
-## Deployed Link 
-  This is a local application with no web functionality at this time. 
 
-## License 
- This project is licensed under the [MIT License](https://choosealicense.com/licenses/mit).   
+
+   
 
 
