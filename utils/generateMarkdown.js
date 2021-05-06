@@ -126,10 +126,10 @@ function renderProjectTesting(testing) {
 function renderProjectQuestions(question, username, email, reponame) {
   if (question) {
     console.log(question)
-    readMeQuestions = `## __Questions__ __And__ __Support__ \n  ${question} \n If you have any questions about the application or the repository, please open an [issue](https://github.com/${username}/${reponame}/issues) or contact me via email at ${email}. \n You can find more of my work on my [GitHub](https://github.com/${username}).`
+    readMeQuestions = `## __Questions__ __And__ __Support__ \n  ${question} \n If you have any questions about the application or the repository, please open an [issue](https://github.com/${username}/${reponame}/issues) or contact me via email at ${email}.   \n You can find more of my work on my [GitHub](https://github.com/${username}).`
   }
   else {
-    readMeQuestions = `## __Questions__ __And__ __Support__ \n If you have any questions about the application or the repository, please open an [issue](https://github.com/${username}/${reponame}/issues) or contact me via email at ${email}. \n You can find more of my work on my [GitHub](https://github.com/${username}).`
+    readMeQuestions = `## __Questions__ __And__ __Support__ \n If you have any questions about the application or the repository, please open an [issue](https://github.com/${username}/${reponame}/issues) or contact me via email at ${email}.   \n You can find more of my work on my [GitHub](https://github.com/${username}).`
   }
   readMeTableContents = readMeTableContents + '- [Questions And Support](#questions-and-support) \n'
 }
