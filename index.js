@@ -67,7 +67,7 @@ const questions = [
     },
     {
         type: 'input',
-        message: 'Please enter the use/purpose of your project (Optional):',
+        message: 'Please enter the usage/directions of your project (Optional):',
         name: 'projUsage',
     },
     {
