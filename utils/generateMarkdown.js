@@ -1,6 +1,6 @@
 let readMeProjectTitle = ''
 let readMeProjectDesc = ''
-let readMeTableContents = ''
+let readMeTableContents = '## Table of Contents \n '
 let readMeScreensShots = ''
 let readMeUserStory = ''
 let readMeAccptCriteria = ''
@@ -10,7 +10,7 @@ let readMeRequires = ''
 let readMeTesting = ''
 let readMeQuestions = ''
 let readMeContributors = ''
-let readMeLicense = ''
+let readMeWebLinks = ''
 let licenseBadge = ''
 let licenseLink = ''
 let licenseText = ''
@@ -34,7 +34,125 @@ let licenseArray = {
 }
 
 
-
+// Function to return the Project Title
+function renderProjectTitle(title) {
+  if (title) {
+    console.log(title)
+    readMeProjectTitle = `# ${title}`
+  }
+  else {
+    readMeProjectTitle = ''
+  }
+}
+// Function to return the Project Description
+function renderProjectDesc(description) {
+  if (description) {
+    console.log(description)
+    readMeProjectDesc = `## Description \n ${description}`
+  }
+  else {
+    readMeProjectDesc = ''
+  }
+}
+// Function to return the Project User Story
+function renderProjectUser(userStory) {
+  if (userStory) {
+    console.log(userStory)
+    readMeUserStory = `## User Story \n \`\`\`md ${userStory}\`\`\` `
+    readMeTableContents = readMeTableContents + '- [User Story](#user-story) \n'
+  }
+  else {
+    readMeUserStory = ''
+  }
+}
+// Function to return the Project Acceptance Criteria
+function renderProjectCriteria(criteria) {
+  if (criteria) {
+    console.log(criteria)
+    readMeAccptCriteria = `## Acceptance Criteria \n \`\`\`md ${criteria}\`\`\` `
+    readMeTableContents = readMeTableContents + '- [Acceptance Criteria](#acceptance-criteria) \n'
+  }
+  else {
+    readMeAccptCriteria = ''
+  }
+}
+// Function to return the Project Installation Procedures
+function renderProjectInstall(install) {
+  if (install) {
+    console.log(install)
+    readMeInstallation = `## Installation \n ${install}`
+    readMeTableContents = readMeTableContents + '- [Installation](#installation) \n'
+  }
+  else {
+    readMeInstallation = ''
+  }
+}
+// Function to return the Project Directions or Usage
+function renderProjectUsage(usage) {
+  if (usage) {
+    console.log(usage)
+    readMeUsage = `## Usage \n  ${usage} `
+    readMeTableContents = readMeTableContents + '- [Usage](#usage) \n'
+  }
+  else {
+    readMeUsage = ''
+  }
+}
+// Function to return the Project Required files
+function renderProjectReqs(required) {
+  if (required) {
+    console.log(required)
+    readMeRequires = `## Usage \n  ${required} `
+    readMeTableContents = readMeTableContents + '- [Requires](#requires) \n'
+  }
+  else {
+    readMeRequires = ''
+  }
+}
+// Function to return the Project Testing
+function renderProjectTesting(testing) {
+  if (testing) {
+    console.log(testing)
+    readMeTesting = `## Testing \n  ${testing} `
+    readMeTableContents = readMeTableContents + '- [Testing](#testing) \n'
+  }
+  else {
+    readMeTesting = ''
+  }
+}
+// Function to return the Project Question or Support
+function renderProjectQuestions(question) {
+  if (question) {
+    console.log(question)
+    readMeQuestions = `## Question And Support \n  ${question} `
+    readMeTableContents = readMeTableContents + '- [Questions And Support](#questions) \n'
+  }
+  else {
+    readMeQuestions = ''
+  }
+}
+// Function to return the Project Contributors
+function renderProjectContribs(contributors) {
+  if (contributors) {
+    console.log(contributors)
+    readMeContributors = `## Contributors \n  ${contributors} `
+    readMeTableContents = readMeTableContents + '- [Contributors](#contributors) \n'
+  }
+  else {
+    readMeContributors = ''
+  }
+}
+// Function to return the Project Contributors
+function renderProjectWebLinks(weblinks) {
+  if (weblinks) {
+    console.log(weblinks)
+    readMeWebLinks = `## Deployed Link \n  ${weblinks} `
+    readMeTableContents = readMeTableContents + '- [Deployed Link](#deployed-link) \n'
+  }
+  else {
+    readMeWebLinks = ''
+  }
+}
 // Function that returns a license badge, license link and license text based on which license is passed in
 // If there is no license, return an empty string
 function renderLicenseBadge(license) {
@@ -43,6 +161,7 @@ function renderLicenseBadge(license) {
     licenseBadge = `[![badge](https://img.shields.io/badge/license-${licenseArray[license]['badge']}-green)](https://choosealicense.com/licenses/${licenseArray[license]['link']})`
     licenseLink = `[${licenseArray[license]['name']}](https://choosealicense.com/licenses/${licenseArray[license]['link']})`
     licenseText = `## License \n This project is licensed under the [${licenseArray[license]['name']}](https://choosealicense.com/licenses/${licenseArray[license]['link']}).`
+    readMeTableContents = readMeTableContents + '- [License](#license) \n'
   }
   else {
     licenseBadge = ''
@@ -51,65 +170,54 @@ function renderLicenseBadge(license) {
   }
 }
 
-
-
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
+  renderProjectTitle(data.projTitle)
+  renderProjectDesc(data.projDesc)
+  renderProjectUser(data.userStory)
+  renderProjectCriteria(data.accptCriteria)
+  renderProjectInstall(data.projInstall)
+  renderProjectUsage(data.projUsage)
+  renderProjectReqs(data.projRequires)
+  renderProjectTesting(data.projTesting)
+  renderProjectQuestions(data.projQues)
+  renderProjectContribs(data.projContribs)
+  renderProjectWebLinks(data.projLink)
   renderLicenseBadge(data.projLicense)
+
 
   let fileContents =
     `
-  # ${data.projTitle}
+${readMeProjectTitle}
 
-  ${licenseBadge}
-  
----  
-## Description
-${data.projDesc}
+${licenseBadge}
 
-## Table of Contents (Optional)
-- [Screenshots And Videos](#screenshots)
-- [User Story](#user-story)
-- [Acceptance Criteria](#acceptance-criteria)
-- [Installation](#installation)
-- [Usage](#usage)
-- [Requires](#requires)
-- [Testing](#testing)
-- [Questions And Support](#questions)
-- [Contributors](#contributors)
-- [License](#license) 
+${readMeProjectDesc}
 
-## Screenshots And Videos
+${readMeTableContents}
+
+
 ---
-## User Story
-${data.userStory}
+${readMeUserStory}
 
-## Acceptance Criteria
-${data.accptCriteria}  
+${readMeAccptCriteria}  
 
-## Installation
-${data.projInstall}  
+${readMeInstallation}  
 
-## Usage
-${data.projUsage}  
+${readMeUsage}  
 
-## Requires
-${data.projRequires}
+${readMeRequires}
 
-## Contributors 
-👪  ${data.projContribs}  
+${readMeTesting} 
 
-## Testing
-${data.projTesting}  
+${readMeQuestions}  
 
-## Questions
-${data.projQues}  
-✉️  ${data.username}
-    ${data.reponame}
-
+${readMeContributors}  
 
 ${licenseText}   
-  `
+
+${readMeWebLinks}
+`
   return fileContents;
 }
 
