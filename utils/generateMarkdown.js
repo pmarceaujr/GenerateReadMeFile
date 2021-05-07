@@ -156,21 +156,19 @@ function renderProjectWebLinks(weblinks) {
   }
 }
 // Function to return the Project Media links (Screenshots or videos)  //![alt text](http://url/to/img.png)
-function renderProjectWebMedia(media1, media2, media3) {
+function renderProjectWebMedia(media1, desc1, media2, desc2, media3, desc3) {
   if (media1) {
     console.log(media1)
-    readMeScreensShots = `## __Media__ __Links__ \n  ![media file 1](./includes/images/${media1}) `
+    readMeScreensShots = `## __Media__ __Links__ \n  \n  ## ${desc1}  \n  ![media file 1](./includes/images/${media1}) `
     readMeTableContents = readMeTableContents + '- [Media Links](#media-links) \n'
   }
   if (media2) {
     console.log(media2)
-    readMeScreensShots = readMeScreensShots + ` \n  ![media file 2](./includes/images/${media2}) `
-    //readMeTableContents = readMeTableContents + '- [Media Links](#media-links) \n'
+    readMeScreensShots = readMeScreensShots + ` \n   \n  ## ${desc2}  \n  ![media file 2](./includes/images/${media2}) `
   }
   if (media3) {
     console.log(media3)
-    readMeScreensShots = readMeScreensShots + ` \n  ![media file 3](./includes/images/${media3}) `
-    //readMeTableContents = readMeTableContents + '- [Media Links](#media-links) \n'
+    readMeScreensShots = readMeScreensShots + ` \n   \n  ## ${desc3}  \n  ![media file 3](./includes/images/${media3}) `
   }
 }
 // Function that returns a license badge, license link and license text based on which license is passed in
@@ -203,7 +201,7 @@ function generateMarkdown(data) {
   renderProjectQuestions(data.projQues, data.username, data.email, data.reponame)
   renderProjectContribs(data.projContribs)
   renderProjectWebLinks(data.projLink)
-  renderProjectWebMedia(data.projScreen1, data.projScreen2, data.projScreen3)
+  renderProjectWebMedia(data.projScreen1, data.projScreenDesc1, data.projScreen2, data.projScreenDesc2, data.projScreen3, data.projScreenDesc3)
   renderLicenseBadge(data.projLicense)
 
   //Below is where the contents of the README file are added to the return variable, that will write the README file.
