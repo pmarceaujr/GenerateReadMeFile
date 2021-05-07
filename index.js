@@ -150,6 +150,21 @@ const questions = [
         message: 'Please enter the file name for screenshot #3 (Optional):',
         name: 'projScreen3',
     },
+    {
+        type: 'input',
+        message: 'Please enter a description for media file #1 (Optional):',
+        name: 'projScreenDesc1',
+    },
+    {
+        type: 'input',
+        message: 'Please enter a description for media file #2 (Optional):',
+        name: 'projScreenDesc2',
+    },
+    {
+        type: 'input',
+        message: 'Please enter a description for media file #3 (Optional):',
+        name: 'projScreenDesc3',
+    },
 ];
 ///////// NEw code for screenshots
 //Create an array of questions for user to add screenshots or other media links
@@ -186,7 +201,7 @@ function init() {
         .then(response => {
             let fileContents = generateMarkdown(response)
             console.log(fileContents)
-            writeToFile('README123.md', fileContents)
+            writeToFile('README.md', fileContents)
         })
 }
 
